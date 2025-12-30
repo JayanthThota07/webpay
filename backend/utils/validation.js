@@ -11,3 +11,7 @@ export const loginSchema = z.object({
   email: z.string().email("Invalid email"),
   password: z.string().min(1),
 });
+export const transferSchema = z.object({
+  to: z.string().min(1, "Receiver userId required"),
+  amount: z.number().positive("Amount must be greater than 0"),
+});
